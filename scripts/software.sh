@@ -16,14 +16,18 @@ sudo apt full-upgrade
 rm zstd bootstrap.tar.zst
 
 # Install utilities and apps
-brew install python@3.10 ansible pinetry-mac lsusb starship robotsandpencils/made/xcodes
+brew tap jorgelbg/tap
+
+brew install python@3.10 ansible pinetry-mac lsusb starship robotsandpencils/made/xcodes pinentry-touchid
+brew install --cask 1password affinity-designer authy bettertouchtool checkra1n docker dropbox eloston-chromium \
+    figma futurerestore-gui icons8 ios-app-signer lastfm manymc microsoft-remote-desktop mobirise raycast \
+    sf-symbols tabby telegram tor-browser universal-android-debloater vscodium gpg-suite-no-mail shottr
+
 sudo apt install nmap sileo tmate clang dsymutil odcctools text-cmds autoconf automake autopoint \
     bash bison cmake curl docbook-xml docbook-xsl fakeroot findutils flex gawk git gnupg groff gzip ldid \
     libtool make ncurses-bin openssl patch pkg-config po4a python3 sed tar triehash xz-utils zstd wget \
     libimobiledevice-utils libirecovery-utils yt-dlp aria2 rsync -y
-brew install --cask 1password affinity-designer authy bettertouchtool checkra1n docker dropbox eloston-chromium \
-    figma futurerestore-gui icons8 ios-app-signer lastfm manymc microsoft-remote-desktop mobirise raycast \
-    sf-symbols tabby telegram tor-browser universal-android-debloater vscodium gpg-suite-no-mail shottr
+
 xcodes install --latest --experimental-unxip
 
 # Install theos
@@ -34,5 +38,8 @@ unzip master.zip -d $TMP
 mv $TMP/sdks-master/*.sdk $THEOS/sdks
 rm -r master.zip $TMP
 
-# Configurations
-echo "pinentry-program pinentry-program $BREW_HOME/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
+# Pinetry stuff
+# sudo /opt/homebrew/opt/pinentry-touchid/bin/pinentry-touchid -fix
+echo "pinentry-program $BREW_HOME/opt/pinentry-touchid/bin/pinentry-touchid" >> ~/.gnupg/gpg-agent.conf
+gpg-connect-agent reloadagent /bye
+defaults write org.gpgtools.common DisableKeychain -bool yes
