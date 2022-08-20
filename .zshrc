@@ -9,7 +9,7 @@ alias ls="ls -aF --color=auto"
 alias la="ls -laF --color=auto"
 alias grep='grep --color'
 alias cp='rsync -ah --info=progress2'
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ip="curl ifconfig.me"
 alias localip="ipconfig getifaddr en0"
 alias plistbuddy="/usr/libexec/PlistBuddy"
 alias reload="exec ${SHELL} -l"
