@@ -111,7 +111,7 @@ defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app" "/Applications/Simulator.app"
 
 # Disable spotlight
-sudo mdutil -a -i off
+sudo mdutil -a -i off &>/dev/null
 
 # Show the main window when launching Activity Monitor
 defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
@@ -128,7 +128,6 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 
 # Unhide folders in Finder
 chflags nohidden ~/Library
-xattr -d com.apple.FinderInfo ~/Library
 
 # Stop .DS_Store on USB and network
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
