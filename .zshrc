@@ -16,6 +16,7 @@ alias reload="exec ${SHELL} -l"
 alias cdl="cd ~/Downloads"
 alias cdt="cd ~/Desktop"
 alias cc="cd ~/Code"
+alias pinentry='pinentry-mac'
 
 # Functions
 function clone {
