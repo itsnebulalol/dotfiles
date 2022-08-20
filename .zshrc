@@ -18,34 +18,34 @@ alias cdt="cd ~/Desktop"
 alias cc="cd ~/Code"
 
 # Functions
-function clone() {
+function clone {
     git clone ssh://git@github.com/$@.git
 }
 
-function rclone() {
+function rclone {
     git clone --recursive ssh://git@github.com/$@.git
 }
 
-function commit() {
+function commit {
     git add .
     git commit -am $*
     git push
 }
 
-function numfiles() { 
+function numfiles { 
     N="$(ls $1 | wc -l)"
     echo "$N files in $1"
 }
 
-function mkd() {
+function mkd {
 	mkdir -p "$@" && cd "$_";
 }
 
-function download() {
+function download {
     aria2c -x5 $@
 }
 
-function o() {
+function o {
 	if [ $# -eq 0 ]; then
 		open .;
 	else

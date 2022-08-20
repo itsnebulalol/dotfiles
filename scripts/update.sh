@@ -4,7 +4,7 @@
 
 git pull
 
-function doIt() {
+function doIt {
     # rsync the files over
 	rsync --exclude ".git/" \
 		--exclude ".DS_Store" \
