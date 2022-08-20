@@ -1,0 +1,28 @@
+[user]
+    name = Nebula
+    email = me@itsnebula.net
+    signingkey = FB04F6C8EC56DA32F33008C53D1B28A5FACCB53B
+
+[github]
+    user = itsnebulalol
+
+[pull]
+    rebase = false
+
+[commit]
+    gpgsign = true
+
+[gpg]
+    program = gpg
+
+[color]
+    ui = true
+
+[merge]
+	conflictstyle = diff3
+
+[init]
+	defaultBranch = main
+
+[core]
+    excludesfile = ~/.gitignore
