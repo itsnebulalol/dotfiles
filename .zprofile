@@ -1,0 +1,9 @@
+# Variables
+export PNPM_HOME="/Users/nebula/Library/pnpm"
+export BREW_HOME="/opt/homebrew"
+export PROCURSUS_HOME="/opt/procursus"
+export PATH="$BREW_HOME/opt/python@3.10/libexec/bin:$BREW_HOME/opt/python@3.10/bin:/opt/procursus/bin:/opt/procursus/sbin:$BUN_INSTALL/bin:$PNPM_HOME:$PATH"
+export BUN_INSTALL="/Users/nebula/.bun"
+export THEOS=~/theos
+export CPATH="$CPATH:/opt/procursus/include"
+export LIBRARY_PATH="$LIBRARY_PATH:/opt/procursus/lib"

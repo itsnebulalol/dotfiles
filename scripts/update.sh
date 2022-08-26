@@ -13,21 +13,20 @@ function doIt {
 		--exclude "README.md" \
 		--exclude "LICENSE.txt" \
 		--exclude "scripts/" \
-		-avh --no-perms . ~;
+		-avh --no-perms . ~
 
     # Source the new zsh scripts
     source ~/.zshenv
     source ~/.zshrc
+    source ~/.zprofile
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
-	doIt;
+	doIt
 else
-	read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
-	echo "";
+	read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
+	echo ""
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
-		doIt;
-	fi;
-fi;
-
-# link "$dotfiles/vscode/settings.json" "~/Library/Application Support/Code/User/settings.json"
+		doIt
+	fi
+fi

@@ -17,14 +17,15 @@ alias cdl="cd ~/Downloads"
 alias cdt="cd ~/Desktop"
 alias cc="cd ~/Code"
 alias pinentry='pinentry-mac'
+alias dy="dig +short @dns.toys"
 
 # Functions
 function clone {
-    git clone ssh://git@github.com/$@.git
+    git clone https://github.com/$@.git
 }
 
 function rclone {
-    git clone --recursive ssh://git@github.com/$@.git
+    git clone --recursive https://github.com/$@.git
 }
 
 function commit {
@@ -43,7 +44,7 @@ function mkd {
 }
 
 function download {
-    aria2c -x5 $@
+    aria2c -x16 $@
 }
 
 function o {
@@ -52,6 +53,14 @@ function o {
 	else
 		open "$@";
 	fi;
+}
+
+function sudo {
+	unset -f sudo
+	if [[ "$(uname)" == 'Darwin' ]] && ! grep 'pam_tid.so' /etc/pam.d/sudo --silent; then
+		sudo sed -i -e '1s;^;auth       sufficient     pam_tid.so\n;' /etc/pam.d/sudo
+	fi
+	sudo "$@"
 }
 
 # Load starship

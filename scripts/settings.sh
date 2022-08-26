@@ -1,6 +1,7 @@
 # settings.sh
 # Modify some macOS settings
 
+osascript -e 'tell application "System Settings" to quit'
 osascript -e 'tell application "System Preferences" to quit'
 
 # Disable the sound effects on boot
